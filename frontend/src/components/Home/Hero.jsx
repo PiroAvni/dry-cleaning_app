@@ -57,7 +57,7 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="bg-base-200"  >
+    <section id="hero" className="bg-base-200 dark:bg-slate-200  "  >
       <Container className=" "> {/* min-h-screen */}
         <Row className="py-4 ">
           <Col md={6} className="py-5 ">
@@ -66,18 +66,32 @@ const Hero = () => {
               <span className="hero_title_text"> Dry Cleaners </span>{" "}
               <br /> in the South East.
             </h3>
-            <p className="text-justify my-3 ">
-              Dry Cleaners is the first Online Laundry Platform in SE area with the
-              latest technology in washing, dry cleaning and laundry. Our
-              services combine our expertise and experience acquired over a
-              period of time to provide you with clean laundry in the shortest
-              possible turnaround time.
-            </p>
-            <Link to="/services">
-              <Button className="cta_button btn  " color="26466F">
+            <blockquote className=" head-title font-bold text-xl mt-5">
+            <span className="before:block before:absolute before:-inset-2 before:-skew-y-2 before:bg-blue-500 relative inline-block mb-4">
+              <span className=" relative text-white mb-3">  
+              24 Hour Dry Cleaning & Laundry Services in London
+              We Collect, Clean and Deliver Directly to Your Door</span>
+            </span>
+          </blockquote>
+          <p className="text-l text-danger font-bold my-3">We Collect, Clean and Deliver Directly to Your Door</p>
+            <Link to="#">
+              <Button className="cta_button btn dark:text-white  " color="26466F">
                 View Services
               </Button>
             </Link>
+            {/* <div className="flex row">
+            
+            <Link to="#">
+            <input type="text" placeholder="Enter Your Postcode" className=" flex col  bg-white input input-bordered w-full m-auto max-w-xs primary-content" />
+                  <Button className="cta_button btn dark:text-white  " color="26466F">
+                    View Services
+                  </Button>
+                </Link>
+                </div> */}
+            <div className="bannermoredetail my-3 text-danger font-weight">
+                  <p className="bannersubtext">Free Same Day Collection, Next Day Delivery.</p>
+                  <p className="bannersubtext">Cashless Payments, Dedicated 24/7 support.</p>
+            </div>
           </Col>
 
           <Col md={6}>
