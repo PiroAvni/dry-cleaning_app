@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/NavBar";
@@ -9,6 +11,8 @@ import Pricing from "./components/Pricing/Pricing";
 import HowWeWork from "./components/Home/HowWeWork";
 import Booking_Banner from "./components/Home/Booking_Banner";
 import Subscriber from "./components/Home/Subscriber";
+import Reviews from "./components/Home/Reviews";
+import Footer from "./components/Home/Footer";
 
 function App() {
   return (
@@ -24,29 +28,31 @@ function App() {
                 <Hero />
                 <About />
                 <Services />
-                <HowWeWork/>
+                <HowWeWork />
                 <Booking_Banner />
-                <Subscriber/>
+                <Subscriber />
+                <Reviews />
+                <Footer />
               </>
             }
           ></Route>
-          
-           <Route
+
+          <Route
             exact
             path="/Services"
             element={
               <>
-              <Header />
-              <Services />
+                <Header />
+                <Services />
               </>
             }
-          ></Route> 
+          ></Route>
           <Route
             exact
             path="/Pricing"
             element={
               <>
-              <Header />
+                <Header />
                 <Pricing />
               </>
             }

@@ -1,7 +1,9 @@
+/** @format */
+
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../assets/css/now-ui-kit.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../../assets/css/now-ui-kit.min.css";
 import {
   Button,
   Carousel,
@@ -12,10 +14,9 @@ import {
   Row,
 } from "reactstrap";
 
-
 const items = [
   {
-    src: require('../../images/Hero/Hero-png/undraw_on_the_way_re_swjt (2) (1).png'),
+    src: require("../../images/Hero/Hero-png/undraw_on_the_way_re_swjt (2) (1).png"),
   },
   {
     src: require("../../images/Hero/Hero-png/undraw_online_shopping.png"),
@@ -29,7 +30,7 @@ const items = [
   {
     src: require("../../images/Hero/undraw_window_shopping_re_0kbm.svg"),
   },
-]
+];
 
 const Hero = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -57,25 +58,32 @@ const Hero = () => {
   };
 
   return (
-    <section id="hero" className="bg-base-200 dark:bg-slate-200  "  >
-      <Container className=" "> {/* min-h-screen */}
+    <section id="hero" className="bg-base-200 dark:bg-slate-200  ">
+      <Container className=" ">
+        {" "}
+        {/* min-h-screen */}
         <Row className="py-4 ">
-          <Col md={6} className="py-5 ">
+          <Col md={6} className="py-5  lg:text-left sm:text-center">
             <h3 className="hero_text text-5xl font-bold">
-              Voted #1{" "}
-              <span className="hero_title_text"> Dry Cleaners </span>{" "}
+              Voted #1 <span className="hero_title_text"> Dry Cleaners </span>{" "}
               <br /> in the South East.
             </h3>
             <blockquote className=" head-title font-bold text-xl mt-5">
-            <span className="before:block before:absolute before:-inset-2 before:-skew-y-2 before:bg-blue-500 relative inline-block mb-4">
-              <span className=" relative text-white mb-3">  
-              24 Hour Dry Cleaning & Laundry Services in London
-              We Collect, Clean and Deliver Directly to Your Door</span>
-            </span>
-          </blockquote>
-          <p className="text-l text-danger font-bold my-3">We Collect, Clean and Deliver Directly to Your Door</p>
+              <span className="before:block before:absolute before:-inset-2 before:-skew-y-2 before:bg-blue-500 relative inline-block mb-4">
+                <span className=" relative text-darkblue mb-3">
+                  24 Hour Dry Cleaning & Laundry Services in London We Collect,
+                  Clean and Deliver Directly to Your Door
+                </span>
+              </span>
+            </blockquote>
+            <p className="text-l text-danger font-bold my-3">
+              We Collect, Clean and Deliver Directly to Your Door
+            </p>
             <Link to="#">
-              <Button className="cta_button btn dark:text-white  " color="26466F">
+              <Button
+                className="cta_button btn dark:text-white  "
+                color="26466F"
+              >
                 View Services
               </Button>
             </Link>
@@ -89,8 +97,12 @@ const Hero = () => {
                 </Link>
                 </div> */}
             <div className="bannermoredetail my-3 text-danger font-weight">
-                  <p className="bannersubtext">Free Same Day Collection, Next Day Delivery.</p>
-                  <p className="bannersubtext">Cashless Payments, Dedicated 24/7 support.</p>
+              <p className="bannersubtext">
+                Free Same Day Collection, Next Day Delivery.
+              </p>
+              <p className="bannersubtext">
+                Cashless Payments, Dedicated 24/7 support.
+              </p>
             </div>
           </Col>
 
@@ -102,41 +114,44 @@ const Hero = () => {
                 onClickHandler={goToIndex}
               />
               {items.map((item) => {
-
                 return (
-                  <CarouselItem onExiting={onExiting} onExited={onExited} key={item.src}>
-										<img
-											src={item.src}
-											alt={item.altText}
-											height="400px"
-											width="600px"
-											className="p-5"
-										/>
-									</CarouselItem>
-                )
+                  <CarouselItem
+                    onExiting={onExiting}
+                    onExited={onExited}
+                    key={item.src}
+                  >
+                    <img
+                      src={item.src}
+                      alt={item.altText}
+                      height="400px"
+                      width="600px"
+                      className="p-5"
+                    />
+                  </CarouselItem>
+                );
               })}
               <a
-								className="carousel-control-prev"
-								data-slide="prev"
-								onClick={(e) => {
-									e.preventDefault();
-									previous();
-								}}
-								role="button"
-							>
-								<i className="now-ui-icons arrows-1_minimal-left" />
-							</a>
-							<a
-								className="carousel-control-next"
-								data-slide="next"
-								onClick={(e) => {
-									e.preventDefault();
-									next();
-								}}
-								role="button"
-							>
-								<i className="now-ui-icons arrows-1_minimal-right" />
-							</a>
+                className="carousel-control-prev"
+                data-slide="prev"
+                onClick={(e) => {
+                  e.preventDefault();
+                  previous();
+                }}
+                role="button"
+              >
+                <i className="now-ui-icons arrows-1_minimal-left" />
+              </a>
+              <a
+                className="carousel-control-next"
+                data-slide="next"
+                onClick={(e) => {
+                  e.preventDefault();
+                  next();
+                }}
+                role="button"
+              >
+                <i className="now-ui-icons arrows-1_minimal-right" />
+              </a>
             </Carousel>
           </Col>
         </Row>

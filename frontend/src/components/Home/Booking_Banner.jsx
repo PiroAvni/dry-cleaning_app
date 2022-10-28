@@ -1,17 +1,18 @@
+/** @format */
+
 import React from "react";
 import { Link } from "react-router-dom";
 import { Button, Container, Row, Input, InputGroupText } from "reactstrap";
 import { useState, useContext, useEffect } from "react";
-import { FormControl } from "@mui/material";
 
 function Booking_Banner() {
   return (
     <section className=" bg-gray-900" id="Booking_Banner">
       <Container>
         <Row>
-          <div className="banner">
+          <div className="banner flex flex-col justify-center ">
             <div className="col-12">
-              <div className="flex justify-content-center justify-center my-4 ">
+              <div className=" flex md:flex sm:flex justify-center my-4 ">
                 <blockquote class=" head-title after:bg-#26466F  font-bold text-3xl my-5">
                   <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-blue-500 relative inline-block">
                     <span class=" relative text-white">
@@ -23,7 +24,7 @@ function Booking_Banner() {
               </div>
             </div>
 
-            <div className="flex flex-row  my-7 s justify-content-center gap-4 justify-center">
+            <div className=" flex  lg:flex-row md:flex-row flex-col md:justify-items-center sm:flex-col sm:justify-items-center md:justify-self-center sm:just justify-center  my-7 gap-4 m-auto mb-5">
               <input
                 type="text"
                 placeholder="Post Code"
