@@ -25,9 +25,9 @@ const Header = (props) => {
 
 	const [ modalLive, setModalLive ] = useState(false);
 
-	const totalQuantity = props.cart.reduce((totalQuantity, product) => {
-		return totalQuantity + product.quantity;
-	}, 0);
+	// const totalQuantity = props.cart.reduce((totalQuantity, product) => {
+	// 	return totalQuantity + product.quantity;
+	// }, 0);
 
 	return (
 		<Navbar className="sticky-top bg-danger" expand="lg">
@@ -73,7 +73,7 @@ const Header = (props) => {
 									<i className="now-ui-icons shopping_bag-16" />
 									<p className="nav-name">
 										Bag
-										{totalQuantity ? <span className="badge ml-1">{totalQuantity}</span> : <span />}
+										{/* {totalQuantity ? <span className="badge ml-1">{totalQuantity}</span> : <span />} */}
 									</p>
 								</NavLink>
 							</Link>

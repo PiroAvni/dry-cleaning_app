@@ -1,38 +1,50 @@
 import { Fragment, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../../assets/css/now-ui-kit.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from "react-router-dom"
+import { Button } from "reactstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../../assets/css/now-ui-kit.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 import Logo from "../../images/logo/logo.svg";
 
-
 const navigation = [
-  { name: "Home", href: "#"  , current: true, icon:'shopping_shop'},
-  { name: "Services", href: "#", current: false },
+  { name: "Home", href: "/", current: true , },
+  { name: "Services", href: "/Services", current: false },
+  { name: "Pricing", href: "/Pricing", current: false },
   { name: "Bag", href: "#", current: false },
   { name: "Dashboard", href: "#", current: false },
 ];
 
+
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
+  
 }
 
 function Header() {
+  const auth = false;
   return (
     <Disclosure as="nav" className="nav shadow sticky-top">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6  ">
-            <div className="relative flex h-16 items-center justify-between">
+            <div className="relative flex h-20 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-gray-100 bg-gray-900 hover:bg-gray-700 hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only  ">Open main menu</span>
                   {open ? (
-                    <XMarkIcon className="block h-6 w-6 text-gray-100 bg-gray-900" aria-hidden="true" />
+                    <XMarkIcon
+                      className="block h-6 w-6 text-gray-100 bg-gray-900"
+                      aria-hidden="true"
+                    />
                   ) : (
-                    <Bars3Icon className="block h-6 w-6 text-gray-100 bg-gray-900" aria-hidden="true" />
+                    <Bars3Icon
+                      className="block h-6 w-6 text-gray-100 bg-gray-900"
+                      aria-hidden="true"
+                    />
                   )}
                 </Disclosure.Button>
               </div>
@@ -48,42 +60,46 @@ function Header() {
                     src={Logo}
                     alt="Dry Cleaner"
                   />
-                 <h2 className=' base-100'><span className="lead mx-1	base-100 text-xl font-xl">Dry Cleaners</span>{" "}</h2> 
+                  <h2 className=" base-100">
+                    <span className="lead mx-1	text-white font-bold text-xl font-xl">
+                      Dry Cleaners
+                    </span>{" "}
+                  </h2>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
                     {navigation.map((item) => (
-                      <a 
+                      <a
                         key={item.name}
                         href={item.href}
                         className={classNames(
                           item.current
                             ? "bg-gray-900 text-white"
                             : "text-gray-100 hover:bg-gray-700 hover:text-white",
-                          "px-3 py-2 rounded-md text-sm font-medium"
+                          "px-3 py-2 rounded-md text-base font-medium"
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
                       </a>
                     ))}
-                   
                   </div>
                 </div>
               </div>
-              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              
+             
+          {auth ? (
+              <div className="  absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                 <button
                   type="button"
-                  className="rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  className="  rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   <span className="sr-only">View notifications</span>
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
-
-                {/* Profile dropdown */}
-                <Menu as="div" className="relative ml-3">
+                <Menu as="div" className=" relative ml-3">
                   <div>
-                    <Menu.Button className="flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <Menu.Button className=" flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-8 rounded-full"
@@ -144,7 +160,18 @@ function Header() {
                     </Menu.Items>
                   </Transition>
                 </Menu>
-              </div>
+              </div>):( 
+               <div className="  absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+             <Link to="/login">
+                <Button
+                  className="login_button btn mx-2 text-base hover:text-white focus:outline-none dark:text-white "
+                  color="26466F"
+                >
+                  Login
+                </Button>
+              </Link>  
+                </div>
+              )}
             </div>
           </div>
 

@@ -35,6 +35,29 @@ html {
 .cta_button:focus {
 	background-color:#17b0f3!important ;
 	color: #fff !important;
+	border: solid 3px ;
+	border-color: #fff !important;
+}
+.cta_button_b{
+	background-color: #17b0f3 !important;
+	margin-top: 1rem;
+	margin-bottom: 0 !important;
+}
+.cta_button_b:hover,
+.cta_button_b:focus {
+	background-color:#26466F!important ;
+	color: #fff !important;
+	border: solid 3px ;
+	//border-color: #26466F !important;
+}
+.login_button{
+	background-color: #17b0f3 !important;
+	border: solid 3px #fff !important;
+}
+.login_button:hover,
+.login_button:focus {
+	background-color:#26466F!important ;
+	color: #fff !important;
 }
 
 .btn-danger {
@@ -69,6 +92,10 @@ h2{
 	color: #fff;
 	}
 }
+.Menu{
+	visibility: hidden;
+}
+
 // #section{
 // 	width: 100%;
 // }
@@ -90,6 +117,13 @@ h2{
 	.now-ui-icons {
 		color: #26466F;
 	}
+}
+.bannermoredetail{
+	padding: 0;
+	padding-left: 10px;
+	border-left: 1px solid #26466F;
+	margin-bottom: 42px;
+
 }
 // img{
 // 	height: 0px !important;
@@ -142,10 +176,13 @@ color:#17b0f3;
   }
   
 // about us
-#about-us {
-	@include underTitle(100px);
-
+    
+	#about-us{
 	@include bgImage('./images/bg/biography-bg.png');
+}
+
+#about-us, #HowItWorks{
+	@include underTitle(150px);
 }
 .head-title::after{
 	background-color: #26466F !important;
@@ -215,7 +252,7 @@ span .text-danger{
 	height: 81px;
 	width: 81px;
 	margin: auto !important;
-	margin-top: 2rem !important;
+	margin-top: 3.5rem !important;
 }
 #works {
 	@include underTitle(170px);
@@ -241,6 +278,30 @@ span .text-danger{
 	font-size: 50px;
 	padding: 0 0;
 	margin-top: 10px;
+}
+// how it works
+.works_sec{
+	background-color: #17b0f3
+}
+.steps{
+	background:#17b0f3 ;
+    color: #fff;
+    border: 10px solid #fff;
+    padding: 10px 22px;
+    margin: auto;
+    width: fit-content;
+    border-radius: 50%;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 86px;
+    width: 86px;
+}
+.steps span{
+	font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
 }
 
 #ChooseUs {
@@ -292,5 +353,40 @@ span .text-danger{
 	.container{
 	max-with: 1680px;	
 	}
-	
+	.howto{
+		display: grid !important;
+	grid-template-columns: repeat(2,1fr);
+	 grid-gap: 60px 30px; 
+	padding: 55px 0 16px;
+	}
+}
+// @media only screen and (mid-width:768px){
+// 		.howto_card {
+// 			//display: grid !important;
+// 			width: 40% !important;
+// 		//grid-template-columns: repeat(2,1fr);
+// 		/* grid-gap: 60px 30px; */
+// 		//padding: 55px 0 16px;
+// 		}
+		
+// 	}
+
+	// @media (min-width: 768px)
+	// .col-md-4 {
+	// 	flex: 0 0 auto;
+	// 	width: 33.33333333%;
+	// }
+	// @media (min-width: 768px){
+	// .container .banner{
+	// 	max-width: 720px;
+	// }
+//}
+@media only screen and (mid-width:768px){
+	.banner{
+		max-width: 720px;
+		padding: 3rem;
+		border-radius: 30px 10px;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
 }

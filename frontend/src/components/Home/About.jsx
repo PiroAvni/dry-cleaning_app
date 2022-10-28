@@ -7,9 +7,11 @@ function About() {
     <section id="about-us">
       <Container>
         <div className="d-flex justify-content-center mb-4">
-          <blockquote class=" head-title font-bold text-3xl mt-5">
+          <blockquote class=" head-title  font-bold text-3xl mt-5">
             <span class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-blue-500 relative inline-block">
-              <span class=" relative text-white">About Us</span>
+              <span class=" relative text-white">
+              About Us
+              </span>
             </span>
           </blockquote>
         </div>
